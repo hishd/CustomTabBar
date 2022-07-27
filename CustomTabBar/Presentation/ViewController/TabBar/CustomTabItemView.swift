@@ -41,31 +41,36 @@ class CustomTabItemView: UIView {
         self.item = item
         self.index = index
         super.init(frame: .zero)
+        
+        setupHierarchy()
+        setupLayoutConstraints()
+        setupProperties()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupHierarchy() {
+    private func setupHierarchy() {
         self.addSubview(containerView)
         containerView.addSubviews(nameLabel, iconImageView, underLineView)
     }
     
-    func setupLayoutConstraints() {
+    private func setupLayoutConstraints() {
         containerView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor)
         containerView.center(inView: self)
+        
+        nameLabel.anchor(left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, height: 16)
         
         iconImageView.anchor(top: self.topAnchor, bottom: nameLabel.topAnchor, width: 40, height: 40)
         iconImageView.centerX(inView: self)
         
-        nameLabel.anchor(left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, height: 16)
-        
         underLineView.centerX(inView: self)
         underLineView.centerY(inView: nameLabel)
+        underLineView.setDimensions(height: 4, width: 40)
     }
     
-    func setupProperties() {
+    private func setupProperties() {
         nameLabel.configureWith(item.name,
                                 color: .white.withAlphaComponent(0.4),
                                 alignment: .center,

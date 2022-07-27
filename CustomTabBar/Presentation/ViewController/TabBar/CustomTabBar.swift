@@ -40,21 +40,21 @@ class CustomTabBar: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    func setupHierarchy() {
+    private func setupHierarchy() {
         addArrangedSubviews([profileTab, searchTab, favouriteTab])
     }
     
-    func setupProperties() {
+    private func setupProperties() {
+        self.axis = .horizontal
         self.distribution = .fillEqually
         self.alignment = .center
         
         self.backgroundColor = .systemIndigo
         setupCornerRadius(30)
         
-        customTabItemViews.forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.clipsToBounds = true
+        customTabItemViews.forEach { tab in
+            tab.translatesAutoresizingMaskIntoConstraints = false
+            tab.clipsToBounds = true
         }
     }
     
@@ -73,7 +73,6 @@ class CustomTabBar: UIStackView {
         self.searchTab.addGestureRecognizer(searchTabGesture)
         self.favouriteTab.addGestureRecognizer(favouriteTabGesture)
     }
-    
     
     @objc func handleProfileTabGesture() {
         self.selectItem(index: profileTab.index)

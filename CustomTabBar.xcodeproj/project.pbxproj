@@ -110,7 +110,6 @@
 		FD34236A2891032600F0C771 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				FD34236B2891033400F0C771 /* CustomTabItem.swift */,
 				FD3423712891091000F0C771 /* Extensions.swift */,
 			);
 			path = Util;
@@ -119,6 +118,7 @@
 		FD34237728910D5F00F0C771 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				FD34236B2891033400F0C771 /* CustomTabItem.swift */,
 				FD342367289102B800F0C771 /* CustomTabBarVC.swift */,
 				FD34237828910D7900F0C771 /* CustomTabItemView.swift */,
 				FD34237A28912D3600F0C771 /* CustomTabBar.swift */,
