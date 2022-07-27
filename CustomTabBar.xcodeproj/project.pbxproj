@@ -20,6 +20,7 @@
 		FD3423722891091000F0C771 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3423712891091000F0C771 /* Extensions.swift */; };
 		FD34237428910AB300F0C771 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237328910AB300F0C771 /* SearchVC.swift */; };
 		FD34237628910AC000F0C771 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237528910AC000F0C771 /* FavouritesVC.swift */; };
+		FD34237928910D7900F0C771 /* CustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237828910D7900F0C771 /* CustomItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FD3423712891091000F0C771 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD34237328910AB300F0C771 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		FD34237528910AC000F0C771 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		FD34237828910D7900F0C771 /* CustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 		FD3423692891031A00F0C771 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FD342367289102B800F0C771 /* CustomTabBarVC.swift */,
+				FD34237728910D5F00F0C771 /* TabBar */,
 				FD34236D289104E500F0C771 /* ProfileVC.swift */,
 				FD34236F2891051100F0C771 /* BaseViewController.swift */,
 				FD34237328910AB300F0C771 /* SearchVC.swift */,
@@ -110,6 +112,15 @@
 				FD3423712891091000F0C771 /* Extensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		FD34237728910D5F00F0C771 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FD342367289102B800F0C771 /* CustomTabBarVC.swift */,
+				FD34237828910D7900F0C771 /* CustomItemView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				FD342352289100EA00F0C771 /* AppDelegate.swift in Sources */,
 				FD34237428910AB300F0C771 /* SearchVC.swift in Sources */,
 				FD3423722891091000F0C771 /* Extensions.swift in Sources */,
+				FD34237928910D7900F0C771 /* CustomItemView.swift in Sources */,
 				FD34236C2891033400F0C771 /* CustomTabItem.swift in Sources */,
 				FD34237628910AC000F0C771 /* FavouritesVC.swift in Sources */,
 				FD342354289100EA00F0C771 /* SceneDelegate.swift in Sources */,
