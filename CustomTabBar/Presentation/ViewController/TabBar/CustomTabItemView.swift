@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 class CustomTabItemView: UIView {
+    let index: Int
+    private let item: CustomTabBarItem
+    private var callback: ((Int) -> Void)
+    
+    private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         return label
@@ -29,17 +35,16 @@ class CustomTabItemView: UIView {
         return view
     }()
     
-    let index: Int
-    private let item: CustomTabItem
     var isSelected: Bool = false {
         didSet {
             animateItems()
         }
     }
     
-    init(with item: CustomTabItem, index: Int) {
+    init(with item: CustomTabBarItem, callback: @escaping (Int) -> Void) {
         self.item = item
-        self.index = index
+        self.index = item.index
+        self.callback = callback
         super.init(frame: .zero)
         
         setupHierarchy()
@@ -60,9 +65,9 @@ class CustomTabItemView: UIView {
         containerView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor)
         containerView.center(inView: self)
         
-        nameLabel.anchor(left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, height: 16)
+        nameLabel.anchor(left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingBottom: 20)
         
-        iconImageView.anchor(top: self.topAnchor, bottom: nameLabel.topAnchor, width: 40, height: 40)
+        iconImageView.anchor(bottom: nameLabel.topAnchor, width: 40, height: 40)
         iconImageView.centerX(inView: self)
         
         underLineView.centerX(inView: self)
@@ -71,7 +76,7 @@ class CustomTabItemView: UIView {
     }
     
     private func setupProperties() {
-        nameLabel.configureWith(item.name,
+        nameLabel.configureWith(item.title,
                                 color: .white.withAlphaComponent(0.4),
                                 alignment: .center,
                                 size: 11,
@@ -80,6 +85,8 @@ class CustomTabItemView: UIView {
         underLineView.setupCornerRadius(2)
         
         iconImageView.image = isSelected ? item.selectedIcon : item.icon
+        
+        self.addGestureRecognizer(tapGesture)
     }
     
     private func animateItems() {
@@ -92,6 +99,10 @@ class CustomTabItemView: UIView {
                           options: .transitionCrossDissolve) { [unowned self] in
             self.iconImageView.image = self.isSelected ? self.item.selectedIcon : self.item.icon
         }
+    }
+    
+    @objc func handleTapGesture() {
+        callback(item.index)
     }
     
 }

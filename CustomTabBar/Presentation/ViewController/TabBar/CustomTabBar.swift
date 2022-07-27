@@ -11,25 +11,20 @@ import UIKit
 class CustomTabBar: UIStackView {
     
     //Tab Bar Items
-    private let profileTab = CustomTabItemView(with: .profile, index: 0)
-    private let searchTab = CustomTabItemView(with: .search, index: 1)
-    private let favouriteTab = CustomTabItemView(with: .favourites, index: 2)
+    private let tabBarTabs: [CustomTabBarItem]
     
-    //Tap Gestures for each tab item
-    private lazy var profileTabGesture = UITapGestureRecognizer(target: self, action: #selector(handleProfileTabGesture))
-    private lazy var searchTabGesture = UITapGestureRecognizer(target: self, action: #selector(handleSearchTabGesture))
-    private lazy var favouriteTabGesture = UITapGestureRecognizer(target: self, action: #selector(handleFavouriteTabGesture))
+    private var customTabItemViews: [CustomTabItemView] = []
     
-    private lazy var customTabItemViews: [CustomTabItemView] = [profileTab, searchTab, favouriteTab]
+    var onTabSelected: ((Int) -> Void)
     
-    var onTabSelected: ((Int) -> Void)?
-    
-    init() {
+    init(tabBarTabs: [CustomTabBarItem], onTabSelected: @escaping ((Int) -> Void)) {
+        self.tabBarTabs = tabBarTabs
+        self.onTabSelected = onTabSelected
         super.init(frame: .zero)
         
+        setupTabBartabs()
         setupHierarchy()
         setupProperties()
-        bind()
                 
         self.setNeedsLayout()
         self.layoutIfNeeded()
@@ -40,8 +35,16 @@ class CustomTabBar: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupTabBartabs() {
+        self.tabBarTabs.forEach { tabBarItem in
+            customTabItemViews.append(CustomTabItemView(with: tabBarItem, callback: { index in
+                self.selectItem(index: index)
+            }))
+        }
+    }
+    
     private func setupHierarchy() {
-        addArrangedSubviews([profileTab, searchTab, favouriteTab])
+        addArrangedSubviews(customTabItemViews)
     }
     
     private func setupProperties() {
@@ -53,7 +56,7 @@ class CustomTabBar: UIStackView {
         setupCornerRadius(30)
         
         customTabItemViews.forEach { tab in
-            tab.translatesAutoresizingMaskIntoConstraints = false
+            tab.anchor(top: self.topAnchor, bottom: self.bottomAnchor)
             tab.clipsToBounds = true
         }
     }
@@ -62,27 +65,6 @@ class CustomTabBar: UIStackView {
         customTabItemViews.forEach { item in
             item.isSelected = item.index == index
         }
-        if let onTabSelected = onTabSelected {
-            onTabSelected(index)
-        }
-    }
-    
-    //Bind the Tab Items with the gestures
-    private func bind() {
-        self.profileTab.addGestureRecognizer(profileTabGesture)
-        self.searchTab.addGestureRecognizer(searchTabGesture)
-        self.favouriteTab.addGestureRecognizer(favouriteTabGesture)
-    }
-    
-    @objc func handleProfileTabGesture() {
-        self.selectItem(index: profileTab.index)
-    }
-    
-    @objc func handleSearchTabGesture() {
-        self.selectItem(index: searchTab.index)
-    }
-    
-    @objc func handleFavouriteTabGesture() {
-        self.selectItem(index: favouriteTab.index)
+        onTabSelected(index)
     }
 }
