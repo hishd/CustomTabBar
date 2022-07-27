@@ -13,6 +13,7 @@
 		FD342359289100EA00F0C771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD342357289100EA00F0C771 /* Main.storyboard */; };
 		FD34235B289100ED00F0C771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD34235A289100ED00F0C771 /* Assets.xcassets */; };
 		FD34235E289100ED00F0C771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD34235C289100ED00F0C771 /* LaunchScreen.storyboard */; };
+		FD342368289102B800F0C771 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD342367289102B800F0C771 /* CustomTabBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FD34235A289100ED00F0C771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD34235D289100ED00F0C771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD34235F289100ED00F0C771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD342367289102B800F0C771 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		FD342350289100EA00F0C771 /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				FD3423662891029800F0C771 /* Presentation */,
 				FD342351289100EA00F0C771 /* AppDelegate.swift */,
 				FD342353289100EA00F0C771 /* SceneDelegate.swift */,
 				FD342355289100EA00F0C771 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				FD34235F289100ED00F0C771 /* Info.plist */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		FD3423662891029800F0C771 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FD342367289102B800F0C771 /* CustomTabBarVC.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				FD342356289100EA00F0C771 /* ViewController.swift in Sources */,
 				FD342352289100EA00F0C771 /* AppDelegate.swift in Sources */,
 				FD342354289100EA00F0C771 /* SceneDelegate.swift in Sources */,
+				FD342368289102B800F0C771 /* CustomTabBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
