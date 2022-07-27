@@ -10,7 +10,6 @@ import UIKit
 
 class CustomTabBarVC: UITabBarController {
     
-    
     private let profileTab = CustomTabBarItem(
         index: 0,
         title: "Profile",

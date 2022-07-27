@@ -1,7 +1,7 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2638
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \deftab720
 \pard\pardeftab720\partightenfactor0
@@ -10,7 +10,7 @@
 # Custom Tab Bar\
 \
 \
-The implementation of custom TabBarController. Moving between tabs is fully animated, and items are easy to configure or add a new one.\
+The implementation of custom TabBarController based on the implementation of [[jcholuj](https://github.com/jcholuj)](https://github.com/jcholuj/CustomTabBarExample) . Moving between tabs is fully animated, and items are easy to configure or add a new one.\
 <br><p align="center">\
   <img src="CustomTabBar.gif" alt="animated" />\
 </p><br>\
@@ -19,14 +19,35 @@ Custom Tab Bar's items changes are handled using RxSwift. For faster implementat
 The implementation has been described in the Medium's article:<br>\
 https://medium.com/@jdrzejchouj/how-to-build-an-animated-custom-tab-bar-for-ios-application-5eb3a72e07a8\
 \
-## Libraries\
-\
-- RxSwift\
-- RxGesture\
-- SnapKit\
-\
 All libraries are installed using Swift Package Manager.\
 \
-## License\
+## How to Use\
 \
-MIT}
+ 1. Create your UIViewControllers for each Tab Item.\
+ 2. Use the swift files on the path ***Presentation/ViewController/TabBar***.\
+ 3. Create **CustomTabBarItem** instances on the **CustomTabBarVC** for each Tab Item using its initializer.\
+ 4. Add your created **CustomTabBarItem** objects to the **tabBarTabs** array\
+\
+> After the above steps you are good to go\
+\
+### Example Code\
+\
+    class CustomTabBarVC: UITabBarController \{\
+	    private let  firstTab = CustomTabBarItem(index: 0,title: "First",\
+	    icon: UIImage(systemName: "person.crop.circle")?.withTintColor(.white.withAlphaComponent(0.4), renderingMode: .alwaysOriginal),\
+	    selectedIcon: UIImage(systemName: "person.crop.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),\
+	    viewController: FirstVC())\
+	    \
+	    private let  secondTab = CustomTabBarItem(index: 0,title: "Second",\
+	    icon: UIImage(systemName: "person.crop.circle")?.withTintColor(.white.withAlphaComponent(0.4), renderingMode: .alwaysOriginal),\
+	    selectedIcon: UIImage(systemName: "person.crop.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),\
+	    viewController: SecondVC())\
+	    \
+	    private let  thirdTab = CustomTabBarItem(index: 0,title: "Third",\
+	    icon: UIImage(systemName: "person.crop.circle")?.withTintColor(.white.withAlphaComponent(0.4), renderingMode: .alwaysOriginal),\
+	    selectedIcon: UIImage(systemName: "person.crop.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal),\
+	    viewController: ThirdVC())\
+	    \
+	    private lazy var  tabBarTabs: [CustomTabBarItem] = [firstTab, secondTab, thirdTab]\
+    \}\
+}
