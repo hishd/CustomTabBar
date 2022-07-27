@@ -20,7 +20,8 @@
 		FD3423722891091000F0C771 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3423712891091000F0C771 /* Extensions.swift */; };
 		FD34237428910AB300F0C771 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237328910AB300F0C771 /* SearchVC.swift */; };
 		FD34237628910AC000F0C771 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237528910AC000F0C771 /* FavouritesVC.swift */; };
-		FD34237928910D7900F0C771 /* CustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237828910D7900F0C771 /* CustomItemView.swift */; };
+		FD34237928910D7900F0C771 /* CustomTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237828910D7900F0C771 /* CustomTabItemView.swift */; };
+		FD34237B28912D3600F0C771 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD34237A28912D3600F0C771 /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		FD3423712891091000F0C771 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FD34237328910AB300F0C771 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		FD34237528910AC000F0C771 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
-		FD34237828910D7900F0C771 /* CustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemView.swift; sourceTree = "<group>"; };
+		FD34237828910D7900F0C771 /* CustomTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItemView.swift; sourceTree = "<group>"; };
+		FD34237A28912D3600F0C771 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				FD342367289102B800F0C771 /* CustomTabBarVC.swift */,
-				FD34237828910D7900F0C771 /* CustomItemView.swift */,
+				FD34237828910D7900F0C771 /* CustomTabItemView.swift */,
+				FD34237A28912D3600F0C771 /* CustomTabBar.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -198,8 +201,9 @@
 				FD342356289100EA00F0C771 /* ViewController.swift in Sources */,
 				FD342352289100EA00F0C771 /* AppDelegate.swift in Sources */,
 				FD34237428910AB300F0C771 /* SearchVC.swift in Sources */,
+				FD34237B28912D3600F0C771 /* CustomTabBar.swift in Sources */,
 				FD3423722891091000F0C771 /* Extensions.swift in Sources */,
-				FD34237928910D7900F0C771 /* CustomItemView.swift in Sources */,
+				FD34237928910D7900F0C771 /* CustomTabItemView.swift in Sources */,
 				FD34236C2891033400F0C771 /* CustomTabItem.swift in Sources */,
 				FD34237628910AC000F0C771 /* FavouritesVC.swift in Sources */,
 				FD342354289100EA00F0C771 /* SceneDelegate.swift in Sources */,

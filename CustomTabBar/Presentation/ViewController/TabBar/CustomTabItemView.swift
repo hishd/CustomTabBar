@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CustomItemView: UIView, BaseViewController {
+class CustomTabItemView: UIView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         return label
@@ -29,7 +29,7 @@ class CustomItemView: UIView, BaseViewController {
         return view
     }()
     
-    private let index: UInt
+    let index: Int
     private let item: CustomTabItem
     var isSelected: Bool = false {
         didSet {
@@ -37,7 +37,7 @@ class CustomItemView: UIView, BaseViewController {
         }
     }
     
-    init(with item: CustomTabItem, index: UInt) {
+    init(with item: CustomTabItem, index: Int) {
         self.item = item
         self.index = index
         super.init(frame: .zero)
