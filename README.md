@@ -5,12 +5,6 @@ The implementation of custom TabBarController based on the implementation of [[j
 <br><p align="center">
   <img src="CustomTabBar.gif" alt="animated" />
 </p><br>
-Custom Tab Bar's items changes are handled using RxSwift. For faster implementation purposes SnapKit has been used for the autolayout part, and RxGesture for handling touch gestures on Tab Bar's items.
-<br><br>
-The implementation has been described in the Medium's article:<br>
-https://medium.com/@jdrzejchouj/how-to-build-an-animated-custom-tab-bar-for-ios-application-5eb3a72e07a8
-
-All libraries are installed using Swift Package Manager.
 
 ## How to Use
 
@@ -23,6 +17,7 @@ All libraries are installed using Swift Package Manager.
 
 ### Example Code
 
+```swift
     class CustomTabBarVC: UITabBarController {
 	    private let  firstTab = CustomTabBarItem(index: 0,title: "First",
 	    icon: UIImage(systemName: "person.crop.circle")?.withTintColor(.white.withAlphaComponent(0.4), renderingMode: .alwaysOriginal),
@@ -41,3 +36,4 @@ All libraries are installed using Swift Package Manager.
 	    
 	    private lazy var  tabBarTabs: [CustomTabBarItem] = [firstTab, secondTab, thirdTab]
     }
+```
